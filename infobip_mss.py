@@ -7,20 +7,7 @@ payload = json.dumps({
         {
             "destinations": [
                 {
-                    "to": "16477690077"
-                }
-            ],
-            "from": "InfoMMS",
-            "messageSegments": [
-                {
-                    "text": "This is a sample message"
-                },
-                {
-                    "contentId": "320px-Depth_of_field_Cat.jpg",
-                    "contentType": "image/jpeg",
-                    "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Depth_of_field_Cat.jpg/320px-Depth_of_field_Cat.jpg"
-                }
-            ],
+                    "to": "14168807375"
             "title": "This is sample subject"
         }
     ]
