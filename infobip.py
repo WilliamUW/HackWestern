@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
-from infobip_channels.sms.channel import SMSChannel
+from infobip_channels.mms.channel import MMSChannel
 
 load_dotenv(".env")
 
@@ -18,24 +18,39 @@ def backend_function():
     response.headers.add("Access-Control-Allow-Origin", "http://127.0.0.1:5173")
     return response
 
-def send_sms(message):
+def send_sms(recipient, message):
     with app.app_context():
         try:
-            infobip_client = SMSChannel.from_auth_params(
+            infobip_client = MMSChannel.from_auth_params(
                 {
                     "base_url": INFOBIP_BASE_URL,
                     "api_key": INFOBIP_API_KEY
                 }
             )
             
-            phone_number = RECIPIENT
+            phone_number = recipient
 
-            response = infobip_client.send_sms_message(
+            response = infobip_client.send_mms_message(
                 {
                     "messages": [
                         {
-                            "destinations": [{"to": phone_number}],
-                            "text": message,
+                            "destinations": [
+                                {
+                                    "to": "14168807375"
+                                }
+                            ],
+                            "from": "InfoMMS",
+                            "messageSegments": [
+                                {
+                                    "text": "This is a sample message"
+                                },
+                                {
+                                    "contentId": "320px-Depth_of_field_Cat.jpg",
+                                    "contentType": "image/jpeg",
+                                    "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Depth_of_field_Cat.jpg/320px-Depth_of_field_Cat.jpg"
+                                }
+                            ],
+                            "title": "This is sample subject"
                         }
                     ]
                 }
@@ -47,4 +62,4 @@ def send_sms(message):
 
 # If this script is run directly, run the send_sms function
 if __name__ == "__main__":
-    send_sms("Hey it's William")
+    send_sms("14168807375", "Hey it's William")
