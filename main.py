@@ -29,6 +29,8 @@ def display_status(recording):
     image = np.zeros((100, 400, 3), dtype=np.uint8)  # Create a black image
     cv2.putText(image, status_text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
     cv2.imshow("Recording Status", image)
+    cv2.setWindowProperty("Recording Status", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    cv2.setWindowProperty("Recording Status", cv2.WND_PROP_TOPMOST, 1)  # Set window always on top
     cv2.waitKey(1)
 
 # Function to encode the image
