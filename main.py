@@ -10,7 +10,8 @@ import pygame
 import time as pythonTime
 from dotenv import load_dotenv
 from infobip import send_sms
-
+import cv2
+import numpy as np
 
 load_dotenv()
 
@@ -20,6 +21,15 @@ OpenAI.api_key = os.environ["OPENAI_API_KEY"]
 is_audio_playing = False
 count = 0
 
+
+# Function to display the recording status
+def display_status(recording):
+    status_text = "Recording..." if recording else "Waiting for response"
+    color = (0, 255, 0) if recording else (255, 0, 0)
+    image = np.zeros((100, 400, 3), dtype=np.uint8)  # Create a black image
+    cv2.putText(image, status_text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+    cv2.imshow("Recording Status", image)
+    cv2.waitKey(1)
 
 # Function to encode the image
 def encode_image(image_path):
@@ -130,6 +140,8 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
             if np.any(indata > threshold):
                 if not started:
                     print("Starting recording...")
+                    display_status(True)  # Display recording status
+
                     # Path to your image
                     image_path = "frames/frame.jpg"
                     # Getting the base64 string
@@ -139,10 +151,12 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
                 audio_frames.append(indata.copy())
                 count = 0
             elif started:
+                audio_frames.append(indata.copy())
                 count += 1
-                print(count)
+                # print(count)
                 if count > 100:
                     recording = False
+                    display_status(False)  # Display recording status
                     raise sd.CallbackAbort
 
         with sd.InputStream(callback=callback, channels=1):
