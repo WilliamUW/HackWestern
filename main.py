@@ -153,7 +153,7 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
         if audio_frames:
             audio_data = np.concatenate(audio_frames, axis=0)
             with BytesIO() as f:
-                sf.write(f, audio_data, samplerate=70000, format="WAV")
+                sf.write(f, audio_data, samplerate=44100, format="WAV")
                 f.seek(0)
                 with sr.AudioFile(f) as source:
                     audio = recognizer.record(source)
@@ -175,7 +175,7 @@ def main():
         print(user_prompt)
         analysis = analyze_image(full_analysis, final_image, user_prompt)
         print(analysis)
-        send_sms(analysis)
+        # send_sms(analysis)
         play_audio(analysis)
         full_analysis = full_analysis + [{"role": "assistant", "content": analysis}]
 

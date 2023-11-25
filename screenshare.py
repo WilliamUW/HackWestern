@@ -71,10 +71,13 @@ def main():
             frame = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
 
             # Display the frame with custom dimensions
-            frame = cv2.resize(frame, (400, 300))  # Resize the frame to 400x300
+            frame = cv2.resize(frame, (320, 180))  # Resize the frame to 400x300
 
             # Display the frame
             cv2.imshow("Screen Sharing Preview", frame)
+            cv2.setWindowProperty("Screen Sharing Preview", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+            cv2.setWindowProperty("Screen Sharing Preview", cv2.WND_PROP_TOPMOST, 1)  # Set window always on top
+
 
             # Save the frame as an image file
             print("Saved current frame")
