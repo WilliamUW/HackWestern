@@ -5,7 +5,6 @@ import speech_recognition as sr
 from openai import OpenAI
 import os
 import base64
-from playsound import playsound
 from io import BytesIO
 import pygame
 import time as pythonTime
