@@ -10,6 +10,8 @@ from io import BytesIO
 import pygame
 import time as pythonTime
 from dotenv import load_dotenv
+from infobip import send_sms
+
 
 load_dotenv()
 
@@ -174,6 +176,7 @@ def main():
         print(user_prompt)
         analysis = analyze_image(full_analysis, final_image, user_prompt)
         print(analysis)
+        send_sms(analysis)
         play_audio(analysis)
         full_analysis = full_analysis + [{"role": "assistant", "content": analysis}]
 
