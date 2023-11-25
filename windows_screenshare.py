@@ -70,6 +70,9 @@ def main():
             # Convert the PIL image back to an OpenCV image
             frame = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
 
+            # Display the frame with custom dimensions
+            frame = cv2.resize(frame, (400, 300))  # Resize the frame to 400x300
+
             # Display the frame
             cv2.imshow("Screen Sharing Preview", frame)
 
