@@ -23,9 +23,9 @@ count = 0
 
 
 # Function to display the recording status
-def display_status(recording):
-    status_text = "Recording..." if recording else "Waiting for response"
-    color = (0, 255, 0) if recording else (255, 0, 0)
+def display_status(text):
+    status_text = text
+    color = (255, 0, 0)
     image = np.zeros((100, 400, 3), dtype=np.uint8)  # Create a black image
     cv2.putText(image, status_text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
     cv2.imshow("Recording Status", image)
@@ -142,7 +142,7 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
             if np.any(indata > threshold):
                 if not started:
                     print("Starting recording...")
-                    display_status(True)  # Display recording status
+                    # display_status("Started recording...")
 
                     # Path to your image
                     image_path = "frames/frame.jpg"
@@ -158,7 +158,7 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
                 # print(count)
                 if count > 100:
                     recording = False
-                    display_status(False)  # Display recording status
+                    # display_status("Stopped recording")  # Display recording status
                     raise sd.CallbackAbort
 
         with sd.InputStream(callback=callback, channels=1):
@@ -189,6 +189,10 @@ def main():
         final_image = get_input_file()
         user_prompt = get_prompt()
         print(user_prompt)
+        pygame.mixer.init()
+        pygame.mixer.music.unload()
+        pygame.mixer.music.load("./audio/placeholder.mp3")
+        pygame.mixer.music.play()
         analysis = analyze_image(full_analysis, final_image, user_prompt)
         print(analysis)
         # send_sms(analysis)
