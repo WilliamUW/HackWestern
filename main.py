@@ -274,7 +274,7 @@ Answer: {analysis}
         "to": "16477690077",
         "content": {
             "mediaUrl": image_url,
-            "caption": "Check out our logo!"
+            "caption": "Here's your screen when you asked the question!"
         }
         })
         play_audio(analysis)
