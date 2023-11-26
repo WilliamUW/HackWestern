@@ -64,11 +64,11 @@ Welcome to the new age of AI collaboration - <b>Share your vision with ScreenBud
 ## Tech Stack:
 
 The tech stack comprises:
-1. A powerful combination of OpenCV and GPT-4-Vision for robust image recognition capabilities. 
-2. Vector embeddings are crafted using ChromaDB and LangChain, tailored specifically for training on DaVinci Resolve and Circle documentation, enhancing understanding and context. 
-3. GPT Whisper handles speech-to-text conversion
-4. GPT TTS seamlessly transforms text to speech. 
-5. The user interface is facilitated by the Tkinter Python Toolkit, offering a user-friendly screen-sharing experience for effective interaction with the AI system. 
+- A powerful combination of OpenCV and GPT-4-Vision for robust image recognition capabilities. 
+- Vector embeddings are crafted using ChromaDB and LangChain, tailored specifically for training on DaVinci Resolve and Circle documentation, enhancing understanding and context. 
+- GPT Whisper handles speech-to-text conversion.
+- GPT TTS seamlessly transforms text to speech. 
+- The user interface is facilitated by the Tkinter Python Toolkit, offering a user-friendly screen-sharing experience for effective interaction with the AI system. 
 
 This comprehensive stack creates a synergistic environment, enabling intuitive and efficient navigation through complex interfaces, whether in video editing with DaVinci Resolve or managing blockchain transactions on Circle.
 
