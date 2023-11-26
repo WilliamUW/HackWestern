@@ -59,7 +59,7 @@ def base64_to_image_url(base64_string, image_format='PNG'):
 
 def upload_to_imgur(image_path):
     # Replace 'your_client_id' with your Imgur API client ID
-    client_id = 'your_client_id'
+    client_id = 'bb370264050e663'
     imgur_api_url = 'https://api.imgur.com/3/image'
 
     headers = {
@@ -273,7 +273,7 @@ Answer: {analysis}
         "from": "447860099299",
         "to": "16477690077",
         "content": {
-            "mediaUrl": "https://seekvectorlogo.com/wp-content/uploads/2019/06/infobip-vector-logo-small.png",
+            "mediaUrl": image_url,
             "caption": "Check out our logo!"
         }
         })

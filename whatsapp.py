@@ -23,6 +23,7 @@ channel = WhatsAppChannel.from_auth_params({
     "api_key": INFOBIP_API_KEY
 })
 
+
 response = channel.send_text_message(
     {
         "from": "447860099299",
