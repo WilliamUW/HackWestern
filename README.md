@@ -26,7 +26,7 @@ Who here knows how to use every single feature that Photoshop offers? Likely no 
 It’s not 50 or 100 or 500 pages. It’s **1017** pages.
 
 ![image1](https://github.com/WilliamUW/HackWestern/assets/58105903/542b9374-5221-40f1-a781-8819995e75b5)
-Adobe Photoshop - World’s most popular image editor
+Adobe Photoshop - World’s most popular image editor.
 https://helpx.adobe.com/pdf/photoshop_reference.pdf
 
 
