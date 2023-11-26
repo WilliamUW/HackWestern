@@ -1,7 +1,7 @@
 ## Circle
 
 Circle explanation:
-- Navigating through blockchain applications and platforms <b>could be overwhelming</b>, Circle’s programmable wallets will enable you to add secure transactions, <b>with your ScreenBuddy, all you have to do is speak and ask</b> and it can assist you with executing transactions all through voice.
+- Navigating through blockchain applications and platforms <b>could be overwhelming</b>, Circle’s programmable wallets will enable you to add secure transactions, <b>with your ScreenBuddy, all you have to do is speak and ask</b> and it can assist you with executing transactions all through voice and your screen.
 
 Circle Code Snippet:
 https://github.com/WilliamUW/HackWestern/blob/3da372f0c9483db1dd5ea50cc9c7e89cad422203/circleTransaction.js#L1-L62
