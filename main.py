@@ -38,6 +38,12 @@ channel = WhatsAppChannel.from_auth_params({
 is_audio_playing = False
 count = 0
 
+def playAudio(output_file_path):
+    pygame.mixer.init()
+    pygame.mixer.music.unload()
+    pygame.mixer.music.load(output_file_path)
+    pygame.mixer.music.play()
+
 def base64_to_image_url(base64_string, image_format='PNG'):
     # Decode base64 string to bytes
     image_data = base64.b64decode(base64_string)
@@ -181,6 +187,7 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
     recognizer = sr.Recognizer()
     with sr.Microphone() as mic:
         print("Listening for speech...")
+        playAudio("./audio/beep.mp3")
         # Adjust the recognizer sensitivity to ambient noise
         recognizer.adjust_for_ambient_noise(mic)
         started = False
@@ -196,6 +203,7 @@ def get_input_file(threshold=0.03, silence_duration=3, base64_image=None):
             if np.any(indata > threshold):
                 if not started:
                     print("Starting recording...")
+                    playAudio("./audio/recording.mp3")
                     # display_status("Started recording...")
 
                     # Path to your image
