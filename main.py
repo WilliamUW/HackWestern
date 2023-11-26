@@ -195,7 +195,14 @@ def main():
         pygame.mixer.music.play()
         analysis = analyze_image(full_analysis, final_image, user_prompt)
         print(analysis)
-        # send_sms(analysis)
+        message = f"""
+ScreenBuddy here - here's your last question in case you missed it!
+
+Question: {user_prompt}
+
+Answer: {analysis}
+"""
+        send_sms("14168807375", message)
         play_audio(analysis)
         full_analysis = full_analysis + [{"role": "assistant", "content": analysis}]
 

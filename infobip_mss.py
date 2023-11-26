@@ -10,7 +10,7 @@ payload = json.dumps({
                     "to": "14168807375"
                 }
             ],
-            "from": "InfoMMS",
+            "from": "18339754043",
             "messageSegments": [
                 {
                     "text": "This is a sample message"
