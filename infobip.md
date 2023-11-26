@@ -4,8 +4,7 @@ Add infobip explanation
 
 Add infobip code
 
-Add infobip demo
+Add infobip demo link
 
-![image](https://github.com/WilliamUW/HackWestern/assets/58105903/76b48c23-2fcb-4269-8933-ac829acf5351)
-
-![image](https://github.com/WilliamUW/HackWestern/assets/58105903/37613135-d70b-46f2-9684-257feb8e04d3)
+![Screenshot_20231125-215316](https://github.com/WilliamUW/HackWestern/assets/58105903/dc788cfa-bb15-474c-b7e4-9b994fa2c87f)
+![Screenshot_20231125-215325](https://github.com/WilliamUW/HackWestern/assets/58105903/ad75d536-0771-4477-82cd-5d1be4e52942)
