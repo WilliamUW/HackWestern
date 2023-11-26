@@ -26,7 +26,7 @@ channel = WhatsAppChannel.from_auth_params({
 response = channel.send_text_message(
     {
         "from": "447860099299",
-        "to": "14168807375",
+        "to": "16477690077",
       "content": {
         "text": "Some text"
       },
@@ -39,7 +39,7 @@ print(response)
 
 response = channel.send_image_message({
   "from": "447860099299",
-  "to": "14168807375",
+  "to": "16477690077",
   "content": {
     "mediaUrl": "https://seekvectorlogo.com/wp-content/uploads/2019/06/infobip-vector-logo-small.png",
     "caption": "Check out our logo!"
