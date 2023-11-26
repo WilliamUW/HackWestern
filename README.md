@@ -1,4 +1,4 @@
-# HackWestern
+# ScreenBuddy - Hack Western X, November 24-26, 2023
 
 <!-- BACK TO TOP -->
 <a name="readme-top"></a>
@@ -7,37 +7,104 @@
 
 <div align="center">
   <a href="https://github.com/WilliamUW/HackWestern"></a>
-  
-  <h3 align="center">ScreenBuddy - Hack Western X, London, November 24-26, 2023</h3>
+ 
+  [<img src="https://img.youtube.com/vi/MGNQpf0Cvo4/0.jpg" width="700">](https://www.youtube.com/watch?v=MGNQpf0Cvo4)
 
-  [![ScreenBuddy Demo](https://img.youtube.com/vi/MGNQpf0Cvo4/0.jpg)](https://www.youtube.com/watch?v=MGNQpf0Cvo4)
-     
+  <h3 align="center"></h3>
   <p align="center">
-    <b style="color: #AADDDF">ScreenBuddy</b> 
-    <br />
-    <br />
-    <a href="https://github.com/WilliamUW/HackWestern"><strong style="color: #AADDDF">View Project Showcase >></strong></a>
+    <b style="color: #AADDDF">⬆️View Demo</b>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
-<!-- [product-screenshot-1] -->
-<div align="center">
+## Problem:
 
-</div>
+Before we get started with our pitch, who here has heard of Photoshop? Likely most people given it’s the most popular image editor in the world.
 
-<b style="color: #AADDDF">We were inspired by:</b> Don't you wish that you can activate ChatGPT directly from your application and help you out seeing what is on your screen? Us too! Say "Hi" to your ScreenBuddy.
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p> 
+Who here knows how to use every single feature that Photoshop offers? Likely no one, and for a good reason. Any idea how long you think the manual for Photoshop is?
 
-## Built With
-| Tech | Company Sponsor Tech |
-| --- | --- |
-| ![Python] | ![Infobip] |
-| ![OpenCV] | ![Circle] |
-| ![GPT-4-Vision] | ![GoDaddy] |
-| ![Whisper] | |
+It’s not 50 or 100 or 500 pages. It’s **1017** pages.
+
+![image1](https://github.com/WilliamUW/HackWestern/assets/58105903/542b9374-5221-40f1-a781-8819995e75b5)
+Adobe Photoshop - World’s most popular image editor
+https://helpx.adobe.com/pdf/photoshop_reference.pdf
+
+
+<i>**And this isn’t an isolated case!**</i>
+
+
+![image3](https://github.com/WilliamUW/HackWestern/assets/58105903/889ca840-285e-4b2e-8a06-684748848ec1)
+Adobe Premiere Pro - World’s most popular video editor has a **818** pages manual.
+https://helpx.adobe.com/content/dam/help/en/pdf/premiere_pro_reference.pdf
+
+<br />
+
+![image4](https://github.com/WilliamUW/HackWestern/assets/58105903/29a0231f-c482-42ac-ae8e-14315eff3f13)
+DaVinci Resolve - World’s most popular free video editor has a **1060** pages manual.
+https://documents.blackmagicdesign.com/UserManuals/DaVinci_Resolve_12_Reference_Manual.pdf
+
+As inexperienced video editors who needed to edit a demo video for this hackathon, we thought there has to be a better way to learn and use the features without going through thousand page manuals and hour long YouTube videos.
+
+Why can’t some"buddy" just tell me exactly what to do?
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Solution:
+
+That’s the problem we decided to solve at Hack Western!
+
+Imagine an AI companion that could not only understand your queries but also helps one navigate the user interface in realtime, providing step-by-step guidance through screen sharing while articulating instructions audibly. 
+
+Essentially ChatGPT but it can help you with whatever is on your screen in realtime!
+
+Welcome to the new age of AI collaboration - <b>Share your vision with ScreenBuddy!</b>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Tech Stack:
+
+The tech stack comprises:
+1. A powerful combination of OpenCV and GPT-4-Vision for robust image recognition capabilities. 
+2. Vector embeddings are crafted using ChromaDB and LangChain, tailored specifically for training on DaVinci Resolve and Circle documentation, enhancing understanding and context. 
+3. GPT Whisper handles speech-to-text conversion
+4. GPT TTS seamlessly transforms text to speech. 
+5. The user interface is facilitated by the Tkinter Python Toolkit, offering a user-friendly screen-sharing experience for effective interaction with the AI system. 
+
+This comprehensive stack creates a synergistic environment, enabling intuitive and efficient navigation through complex interfaces, whether in video editing with DaVinci Resolve or managing blockchain transactions on Circle.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Challenges we ran into:
+
+- Integrating OpenCV and GPT-4-Vision for seamless image recognition posed technical hurdles when it came to streaming visual media files.
+- Fine-tuning vector embeddings using ChromaDB and LangChain required iterative experimentation to achieve good results with DaVinci Resolve.
+- Ensuring real-time responsiveness in Tkinter Python Toolkit for effective screen sharing and speech recognition was a significant challenge.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Accomplishments that we're proud of:
+
+- Successful integration of OpenCV and GPT-4-Vision for robust image recognition capabilities.
+- Precision in crafting vector embeddings via ChromaDB and LangChain for tailored training on DaVinci Resolve and Circle documentation.
+- Seamless implementation of GPT Whisper and GPT TTS for speech-to-text and text-to-speech transformations.
+- Development of a user-friendly interface using Tkinter Python Toolkit for intuitive screen sharing.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## What we learned:
+
+- The synergy between computer vision and natural language processing is pivotal for effective AI-assisted navigation.
+- The importance of iterative testing and fine-tuning in creating a reliable and user-friendly system.
+- Addressing real-time responsiveness challenges in UI interactions enhances overall user experience.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## What's next for our project:
+
+- Implementing user feedback for continuous improvement and refinement.
+- Exploring additional applications beyond DaVinci Resolve and Circle for a broader user base.
+- Enhancing the AI's contextual understanding for even more intuitive interactions.
+- Collaborating with the community to expand the range of supported interfaces and functionalities.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
