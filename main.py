@@ -12,15 +12,69 @@ from dotenv import load_dotenv
 from infobip import send_sms
 import cv2
 import numpy as np
+from infobip_channels.whatsapp.channel import WhatsAppChannel
+import base64
+import requests
+from io import BytesIO
+from PIL import Image
+
 
 load_dotenv()
 
 OpenAI.api_key = os.environ["OPENAI_API_KEY"]
+INFOBIP_BASE_URL = os.getenv("INFOBIP_BASE_URL")
+INFOBIP_API_KEY = os.getenv("INFOBIP_API_KEY")
+RECIPIENT = os.getenv("RECIPIENT")
+
+channel = WhatsAppChannel.from_auth_params({
+    "base_url": INFOBIP_BASE_URL,
+    "api_key": INFOBIP_API_KEY
+})
+
+
+
 
 # Variable to track whether audio is playing
 is_audio_playing = False
 count = 0
 
+def base64_to_image_url(base64_string, image_format='PNG'):
+    # Decode base64 string to bytes
+    image_data = base64.b64decode(base64_string)
+
+    # Create an in-memory file-like object
+    image_file = BytesIO(image_data)
+
+    # Open the image using PIL (Python Imaging Library)
+    img = Image.open(image_file)
+
+    # Save the image to a temporary file
+    temp_filename = f'temporary_image.{image_format.lower()}'
+    img.save(temp_filename, format=image_format)
+
+    # Upload the temporary file to an image hosting service (e.g., Imgur)
+    imgur_url = upload_to_imgur(temp_filename)
+
+    return imgur_url
+
+def upload_to_imgur(image_path):
+    # Replace 'your_client_id' with your Imgur API client ID
+    client_id = 'your_client_id'
+    imgur_api_url = 'https://api.imgur.com/3/image'
+
+    headers = {
+        'Authorization': f'Client-ID {client_id}'
+    }
+
+    # Upload image to Imgur
+    with open(image_path, 'rb') as f:
+        files = {'image': f}
+        response = requests.post(imgur_api_url, headers=headers, files=files)
+
+    # Get the uploaded image URL from the response
+    imgur_url = response.json()['data']['link']
+
+    return imgur_url
 
 # Function to display the recording status
 def display_status(text):
@@ -201,7 +255,28 @@ Question: {user_prompt}
 
 Answer: {analysis}
 """
-        send_sms("14168807375", message)
+        response = channel.send_text_message(
+            {
+                "from": "447860099299",
+                "to": "16477690077",
+            "content": {
+                "text": message
+            },
+            "callbackData": "Callback data",
+            "notifyUrl": "https://www.example.com/whatsapp"
+            }
+        )
+        # Example usage
+        image_url = base64_to_image_url(final_image)
+        print(f"The image is available at: {image_url}")
+        response = channel.send_image_message({
+        "from": "447860099299",
+        "to": "16477690077",
+        "content": {
+            "mediaUrl": "https://seekvectorlogo.com/wp-content/uploads/2019/06/infobip-vector-logo-small.png",
+            "caption": "Check out our logo!"
+        }
+        })
         play_audio(analysis)
         full_analysis = full_analysis + [{"role": "assistant", "content": analysis}]
 
