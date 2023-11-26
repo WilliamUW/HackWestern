@@ -1,13 +1,26 @@
 import http.client
 import json
 
-conn = http.client.HTTPSConnection("e1dgy3.api.infobip.com")
+conn = http.client.HTTPSConnection("k2x6q3.api.infobip.com")
 payload = json.dumps({
     "messages": [
         {
             "destinations": [
                 {
                     "to": "14168807375"
+                }
+            ],
+            "from": "InfoMMS",
+            "messageSegments": [
+                {
+                    "text": "This is a sample message"
+                },
+                {
+                    "contentId": "320px-Depth_of_field_Cat.jpg",
+                    "contentType": "image/jpeg",
+                    "contentUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Depth_of_field_Cat.jpg/320px-Depth_of_field_Cat.jpg"
+                }
+            ],
             "title": "This is sample subject"
         }
     ]

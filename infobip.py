@@ -33,7 +33,7 @@ def send_sms(recipient, message):
                 {
                     "messages": [
                         {
-                            "destinations": [{"to": "16477690077"}],
+                            "destinations": [{"to": "14168807375"}],
                             "from": "18336961002",
                             "text": "It's William",
                         }
@@ -48,4 +48,4 @@ def send_sms(recipient, message):
 
 # If this script is run directly, run the send_sms function
 if __name__ == "__main__":
-    print(send_sms("14168807375", "Hey it's William"))
+    print(send_sms("14168807375", "Hey it's William").toString())
