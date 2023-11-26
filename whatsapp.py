@@ -25,9 +25,8 @@ channel = WhatsAppChannel.from_auth_params({
 
 response = channel.send_text_message(
     {
-        "from": "12496638095",
+        "from": "447860099299",
         "to": "14168807375",
-      "messageId": "a28dd97c-1ffb-4fcf-99f1-0b557ed381da",
       "content": {
         "text": "Some text"
       },
@@ -39,9 +38,8 @@ response = channel.send_text_message(
 print(response)
 
 response = channel.send_image_message({
-  "from": "12496638095",
+  "from": "447860099299",
   "to": "14168807375",
-  "messageId": "a28dd97c-1ffb-4fcf-99f1-0b557ed381da",
   "content": {
     "mediaUrl": "https://seekvectorlogo.com/wp-content/uploads/2019/06/infobip-vector-logo-small.png",
     "caption": "Check out our logo!"
