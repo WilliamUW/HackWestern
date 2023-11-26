@@ -1,6 +1,6 @@
 ## Circle
 
-[Add Circle Explanation here @andy]
+Add Circle Explanation here @andy
 
 https://github.com/WilliamUW/HackWestern/blob/3da372f0c9483db1dd5ea50cc9c7e89cad422203/circleTransaction.js#L1-L62
 
